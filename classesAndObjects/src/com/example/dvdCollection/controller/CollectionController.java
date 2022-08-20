@@ -7,12 +7,18 @@ import com.example.dvdCollection.view.CollectionIO;
 import com.example.dvdCollection.view.CollectionIoConsole;
 import com.example.dvdCollection.view.CollectionView;
 
+import java.util.List;
+
 public class CollectionController {
+
+
+    //Controller
     private CollectionView view = new CollectionView();
     private CollectionIO io = new CollectionIoConsole();
-
-
     private CollectionDao dao = new CollectionDaoFile();
+
+
+
 
 
 
@@ -25,16 +31,17 @@ public class CollectionController {
 
             switch (menuSelection) {
                 case 1:
-                    io.print("LIST DVDs");
+                    listDvds();
                     break;
                 case 2:
+
                     createDvd();
                     break;
                 case 3:
-                    io.print("VIEW DVD");
+                    viewDvd();
                     break;
                 case 4:
-                    io.print("DELETE DVD");
+                    removeDvd();
                     break;
                 case 5:
                     io.print("EDIT DVD");
@@ -46,15 +53,16 @@ public class CollectionController {
                     keepGoing = false;
                     break;
                 default:
-                    io.print("UNKNOWN COMMAND");
+                    unknownCommand();
             }
 
         }
-        io.print("GOOD BYE");
+        exitMessage();
     }
     private int getMenuSelection() {
         return view.outputMenu();
     }
+
 
 
 
@@ -63,7 +71,37 @@ public class CollectionController {
         Collection newDvd = view.getNewDvdInfo();
         dao.addDVD(newDvd.getDvdID(), newDvd);
         view.displayCreateSuccessBanner();
+        System.out.println(newDvd);
+
+    }
+    private void listDvds() {
+        view.displayDisplayAllBanner();
+        List<Collection> dvdList = dao.getAlldvd();
+        view.displayDVDList(dvdList);
+        System.out.println(dvdList);
+    }
+
+    private void viewDvd() {
+        view.displayDisplayStudentBanner();
+        String title = view.getDvdtitle();
+        Collection dvd = dao.getDVD(title);
+        view.displayDvd(dvd);
+    }
+
+    private void removeDvd() {
+        view.displayRemoveStudentBanner();
+        String title = view.getDvdtitle();
+        Collection removeDvd = dao.removeDvd(title);
+        view.displayRemoveResult(removeDvd);
     }
 
 
+
+    private void unknownCommand() {
+        view.displayUnknownCommandBanner();
+    }
+
+    private void exitMessage() {
+        view.displayExitBanner();
+    }
 }

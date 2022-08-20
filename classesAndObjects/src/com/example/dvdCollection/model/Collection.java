@@ -11,60 +11,36 @@ public class Collection {
     private String userNote;
 
     public Collection(String dvdID) {
-        this.dvdID = dvdID;
+
     }
 
-    public String getDvdID() {
-        return dvdID;
-    }
+    public String getDvdID() {return dvdID;}
 
-    public String getTitle() {
-        return title;
-    }
+    public void Collection(String dvdID) {this.dvdID = dvdID;}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public String getTitle() {return title;}
 
-    public String getReleaseDate() {
-        return releaseDate;
-    }
+    public void setTitle(String title) {this.title = title;}
 
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
-    }
+    public String getReleaseDate() {return releaseDate;}
 
-    public String getMpaaRating() {
-        return mpaaRating;
-    }
+    public void setReleaseDate(String releaseDate) {this.releaseDate = releaseDate;}
 
-    public void setMpaaRating(String mpaaRating) {
-        this.mpaaRating = mpaaRating;
-    }
+    public String getMpaaRating() {return mpaaRating;}
 
-    public String getDirectorName() {
-        return directorName;
-    }
+    public void setMpaaRating(String mpaaRating) {this.mpaaRating = mpaaRating;}
 
-    public void setDirectorName(String directorName) {
-        this.directorName = directorName;
-    }
+    public String getDirectorName() {return directorName;}
 
-    public String getStudio() {
-        return studio;
-    }
+    public void setDirectorName(String directorName) {this.directorName = directorName;}
 
-    public void setStudio(String studio) {
-        this.studio = studio;
-    }
+    public String getStudio() {return studio;}
 
-    public String getUserNote() {
-        return userNote;
-    }
+    public void setStudio(String studio) {this.studio = studio;}
 
-    public void setUserNote(String userNote) {
-        this.userNote = userNote;
-    }
+    public String getUserNote() {return userNote;}
+
+    public void setUserNote(String userNote) {this.userNote = userNote;}
 
     public Collection put(String dvdID, Collection dvd) {return dvd;} //Check this
 
