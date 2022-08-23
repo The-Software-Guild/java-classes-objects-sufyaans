@@ -1,6 +1,7 @@
 package com.example.dvdCollection.view;
 
 public interface CollectionIO {
+    //UserIO
     void print(String msg);
 
     String readString(String msgPrompt);
@@ -20,5 +21,5 @@ public interface CollectionIO {
     double readDouble(String msgPrompt);
 
     double readDouble(String msgPrompt, double min, double max);
-    //UserIO
+
 }

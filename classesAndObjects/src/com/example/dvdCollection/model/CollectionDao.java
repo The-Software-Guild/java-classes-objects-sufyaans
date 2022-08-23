@@ -9,8 +9,8 @@ public interface CollectionDao {
     Collection addDVD(String dvdID, Collection dvd);
 
     List<Collection> getAlldvd();
-    Collection getDVD(String dvdID);
-    Collection deleteDVD(String dvdID);
+    Collection getDVD(String title);
+    Collection deleteDVD(String title);
 
 
     Collection removeDvd(String title);

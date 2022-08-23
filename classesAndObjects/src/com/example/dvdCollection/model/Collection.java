@@ -42,6 +42,6 @@ public class Collection {
 
     public void setUserNote(String userNote) {this.userNote = userNote;}
 
-    public Collection put(String dvdID, Collection dvd) {return dvd;} //Check this
+    //public Collection put(String dvdID, Collection dvd) {return dvd;} //Check this
 
 }

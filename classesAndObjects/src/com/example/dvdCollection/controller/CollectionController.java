@@ -14,8 +14,17 @@ public class CollectionController {
 
     //Controller
     private CollectionView view = new CollectionView();
-    private CollectionIO io = new CollectionIoConsole();
+
     private CollectionDao dao = new CollectionDaoFile();
+
+//    private CollectionView view;
+//
+//    private CollectionDao dao;
+//
+//    public CollectionController(CollectionDaoFile dao, CollectionView view) {
+//        this.view = view;
+//        this.dao = dao;
+//    }
 
 
 
@@ -44,10 +53,10 @@ public class CollectionController {
                     removeDvd();
                     break;
                 case 5:
-                    io.print("EDIT DVD");
+                    //io.print("EDIT DVD");
                     break;
                 case 6:
-                    io.print("SEARCH DVD");
+                    //io.print("SEARCH DVD");
                     break;
                 case 7:
                     keepGoing = false;

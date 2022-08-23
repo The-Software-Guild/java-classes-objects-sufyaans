@@ -8,19 +8,19 @@ import java.util.Map;
 public class CollectionDaoFile implements CollectionDao {
     //ClassRosterDaoFileImpl
 
-    private Map<String, Collection> dvd = new HashMap<>();
+    private Map<String, Collection> dvd1 = new HashMap<>();
     @Override
     public Collection addDVD(String dvdID, Collection dvd) {
-        Collection prevDvd = dvd.put(dvdID, dvd);
+        Collection prevDvd = dvd1.put(dvdID, dvd);
         return prevDvd;
     }
     @Override
     public List<Collection> getAlldvd() {
-        return new ArrayList<Collection>(dvd.values());
+        return new ArrayList<Collection>(dvd1.values());
     }
     @Override
     public Collection getDVD(String title) {
-        return dvd.get(title);
+        return dvd1.get(title);
     }
 
     @Override
@@ -30,10 +30,9 @@ public class CollectionDaoFile implements CollectionDao {
 
     @Override
     public Collection removeDvd(String title) {
-        Collection removeDvd = dvd.remove(title);
+        Collection removeDvd = dvd1.remove(title);
         return removeDvd;
     }
-
 
 
 }

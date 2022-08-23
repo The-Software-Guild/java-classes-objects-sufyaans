@@ -68,12 +68,13 @@ public class CollectionView {
     }
     public void displayDVDList(List<Collection> DVDList) {
         for (Collection currentDvd : DVDList) {
-            String dvdInfo = String.format("#%s : %s %s %s %s %s %s",
+            String dvdInfo = String.format("#%s : %s %s",
                     currentDvd.getDvdID(),
                     currentDvd.getTitle(),
                     currentDvd.getReleaseDate());
                     currentDvd.getMpaaRating();
                     currentDvd.getDirectorName();
+                    currentDvd.getStudio();
                     currentDvd.getUserNote();
 
             io.print(dvdInfo);
