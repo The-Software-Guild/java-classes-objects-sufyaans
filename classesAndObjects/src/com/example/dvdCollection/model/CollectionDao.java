@@ -6,11 +6,11 @@ import java.util.List;
 public interface CollectionDao {
     //ClassRosterDao
 
-    Collection addDVD(String dvdID, Collection dvd);
+    Collection addDVD(String title, Collection dvd);
 
     List<Collection> getAlldvd();
-    Collection getDVD(String title);
-    Collection deleteDVD(String title);
+    Collection viewDvd(String title);
+    Collection editDvd(String title);
 
 
     Collection removeDvd(String title);

@@ -53,7 +53,7 @@ public class CollectionController {
                     removeDvd();
                     break;
                 case 5:
-                    //io.print("EDIT DVD");
+                    editDvd();
                     break;
                 case 6:
                     //io.print("SEARCH DVD");
@@ -77,23 +77,21 @@ public class CollectionController {
 
     private void createDvd() {
         view.displayCreateDVDBanner();
-        Collection newDvd = view.getNewDvdInfo();
-        dao.addDVD(newDvd.getDvdID(), newDvd);
+        Collection newDVD = view.getNewDvdInfo();
+        dao.addDVD(newDVD.getTitle(), newDVD);
         view.displayCreateSuccessBanner();
-        System.out.println(newDvd);
 
     }
     private void listDvds() {
         view.displayDisplayAllBanner();
-        List<Collection> dvdList = dao.getAlldvd();
-        view.displayDVDList(dvdList);
-        System.out.println(dvdList);
+        List<Collection> DVDList = dao.getAlldvd();
+        view.displayDVDList(DVDList);
     }
 
     private void viewDvd() {
         view.displayDisplayStudentBanner();
         String title = view.getDvdtitle();
-        Collection dvd = dao.getDVD(title);
+        Collection dvd = dao.viewDvd(title);
         view.displayDvd(dvd);
     }
 
@@ -102,6 +100,51 @@ public class CollectionController {
         String title = view.getDvdtitle();
         Collection removeDvd = dao.removeDvd(title);
         view.displayRemoveResult(removeDvd);
+    }
+
+    private void editDvd(){
+        view.displayEditDVDBanner();
+        String dvdTitle = view.getDvdtitle();
+        Collection dvd = dao.viewDvd(dvdTitle);
+        if (dvd != null){
+            view.displayDvd(dvd);
+            int editSelection = view.editMenu();
+            switch (editSelection) {
+                case 1:
+                    String newTitle = view.getNewTitle();
+                    Collection newDVD = dao.removeDvd(dvdTitle);
+                    newDVD.setTitle(newTitle);
+                    dao.addDVD(newTitle,newDVD);
+                    break;
+                case 2:
+                    String newReleaseDate = view.getNewReleaseDate();
+                    dvd.setReleaseDate(newReleaseDate);
+                    break;
+                case 3:
+                    String newDirector = view.getNewDirectorName();
+                    dvd.setDirectorName(newDirector);
+                    break;
+                case 4:
+                    String newStudio = view.getNewStudio();
+                    dvd.setStudio(newStudio);
+                    break;
+                case 5:
+                    String newMpaaRating = view.getNewMPAA();
+                    dvd.setMpaaRating(newMpaaRating);
+                    break;
+                case 6:
+                    String newUserRating = view.getNewUserNote();
+                    dvd.setUserNote(newUserRating);
+                    break;
+                default:
+                    unknownCommand();
+
+            }
+            view.displayEditSuccessBanner();
+
+        } else {
+            //Error message needed
+        }
     }
 
 

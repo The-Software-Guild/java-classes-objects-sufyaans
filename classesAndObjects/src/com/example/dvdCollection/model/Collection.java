@@ -1,8 +1,6 @@
 package com.example.dvdCollection.model;
 
 public class Collection {
-    //Student
-    private String dvdID;
     private String title;
     private String releaseDate;
     private String mpaaRating;
@@ -10,13 +8,17 @@ public class Collection {
     private String studio;
     private String userNote;
 
-    public Collection(String dvdID) {
+    public Collection(String title,String releaseDate,String directorName,String studio,String mpaaRating,String  userNote) {
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.mpaaRating = mpaaRating;
+        this.directorName = directorName;
+        this.studio = studio;
+        this.userNote = userNote;
 
     }
 
-    public String getDvdID() {return dvdID;}
 
-    public void Collection(String dvdID) {this.dvdID = dvdID;}
 
     public String getTitle() {return title;}
 

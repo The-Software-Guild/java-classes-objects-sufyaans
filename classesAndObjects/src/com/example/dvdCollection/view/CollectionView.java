@@ -24,15 +24,13 @@ public class CollectionView {
                 + " above choices.", 1, 7);
     }
 
-
-
     //ADD DVD
     public void displayCreateDVDBanner() {
         io.print("=== Add a DVD ===");
     }
 
     public Collection getNewDvdInfo() {
-        String dvdID = io.readString("Please enter DVD ID");
+
         String title = io.readString("Please enter a title");
         String releaseDate = io.readString("Please enter Date");
         String mpaaRating = io.readString("Please enter an MPAA Rating");
@@ -40,7 +38,7 @@ public class CollectionView {
         String studio = io.readString("Please enter studio name");
         String userNote = io.readString("Please enter user note");
 
-        Collection currentDvd = new Collection(dvdID);
+        Collection currentDvd = new Collection(title, releaseDate, directorName, studio, mpaaRating,  userNote);
 
         currentDvd.setTitle(title);
         currentDvd.setReleaseDate(releaseDate);
@@ -52,8 +50,6 @@ public class CollectionView {
         return currentDvd;
 
     }
-
-
 
     public void displayCreateSuccessBanner() {
         io.readString(
@@ -68,8 +64,8 @@ public class CollectionView {
     }
     public void displayDVDList(List<Collection> DVDList) {
         for (Collection currentDvd : DVDList) {
-            String dvdInfo = String.format("#%s : %s %s",
-                    currentDvd.getDvdID(),
+            String dvdInfo = String.format("%s : %s | %s | %s | %s | %s",
+
                     currentDvd.getTitle(),
                     currentDvd.getReleaseDate());
                     currentDvd.getMpaaRating();
@@ -82,7 +78,7 @@ public class CollectionView {
         io.readString("Please hit enter to continue.");
     }
 
-
+    //View DVD
     public void displayDisplayStudentBanner () {
         io.print("=== Display DVD ===");
     }
@@ -107,7 +103,7 @@ public class CollectionView {
     }
 
 
-
+    //Remove DVD
     public void displayRemoveStudentBanner () {
         io.print("=== Remove DVD ===");
     }
@@ -120,6 +116,65 @@ public class CollectionView {
         }
         io.readString("Please hit enter to continue.");
     }
+
+    public void displayEditStudentBanner () {
+        io.print("=== Edit DVD ===");
+    }
+
+    public void displayEditDVDBanner() {
+        io.print("=== Edit DVD ===");
+    }
+
+    public int editMenu() {
+
+        io.print("Edit Options Menu");
+        io.print("1. Edit title");
+        io.print("2. Edit release date");
+        io.print("3. Edit director");
+        io.print("4. Edit studio");
+        io.print("5. Edit mmpaa rating");
+        io.print("6. Edit user rating");
+        io.print("7. Edit note");
+
+        return io.readInt("Please select from the above choices.", 1, 7);
+    }
+
+    public String getNewTitle() {
+        String title = io.readString("Please enter the dvd title: ");
+        return title;
+    }
+
+    public String getNewReleaseDate() {
+        String releaseDate = io.readString("Please enter the release date: ");
+        return releaseDate;
+    }
+
+    public String getNewDirectorName() {
+        String directorName = io.readString("Please enter the name of the director: ");
+        return directorName;
+    }
+
+    public String getNewStudio() {
+        String studio = io.readString("Please enter the name of the studio: ");
+        return studio;
+    }
+
+    public String getNewMPAA() {
+        String mpaaRating = io.readString("Please enter the dvd mpaa rating: ");
+        return mpaaRating;
+    }
+
+    public String getNewUserNote() {
+        String userNote = io.readString("Please enter the user rating: ");
+        return userNote;
+    }
+
+
+    public void displayEditSuccessBanner() {
+        io.print("DVD successfully edited. Please hit enter to continue");
+    }
+
+
 
     public void displayExitBanner() {
         io.print("Good Bye!!!");

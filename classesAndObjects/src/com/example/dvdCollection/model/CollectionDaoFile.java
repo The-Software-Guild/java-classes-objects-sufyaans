@@ -10,21 +10,21 @@ public class CollectionDaoFile implements CollectionDao {
 
     private Map<String, Collection> dvd1 = new HashMap<>();
     @Override
-    public Collection addDVD(String dvdID, Collection dvd) {
-        Collection prevDvd = dvd1.put(dvdID, dvd);
+    public Collection addDVD(String title, Collection dvd) {
+        Collection prevDvd = dvd1.put(title, dvd);
         return prevDvd;
     }
     @Override
     public List<Collection> getAlldvd() {
-        return new ArrayList<Collection>(dvd1.values());
+        return new ArrayList(dvd1.values());
     }
     @Override
-    public Collection getDVD(String title) {
+    public Collection viewDvd(String title) {
         return dvd1.get(title);
     }
 
     @Override
-    public Collection deleteDVD(String title) {
+    public Collection editDvd(String title) {
         return null;
     }
 

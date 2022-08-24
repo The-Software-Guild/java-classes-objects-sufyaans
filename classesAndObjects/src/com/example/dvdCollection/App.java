@@ -9,7 +9,7 @@ import com.example.dvdCollection.view.CollectionView;
 
 public class App {
 
-    //Problem viewing all DVDs and specific DVD's
+    //Problem viewing all DVDs
     public static void main(String[] args) {
         CollectionController controller = new CollectionController();
         controller.run();
