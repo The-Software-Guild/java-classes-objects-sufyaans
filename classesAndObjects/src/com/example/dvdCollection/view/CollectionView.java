@@ -63,8 +63,9 @@ public class CollectionView {
         io.print("=== Display All DVDs ===");
     }
     public void displayDVDList(List<Collection> DVDList) {
+        io.print("Title: Release Date");
         for (Collection currentDvd : DVDList) {
-            String dvdInfo = String.format("%s : %s | %s | %s | %s | %s",
+            String dvdInfo = String.format("%s : %s",
 
                     currentDvd.getTitle(),
                     currentDvd.getReleaseDate());
@@ -117,6 +118,7 @@ public class CollectionView {
         io.readString("Please hit enter to continue.");
     }
 
+    //Edit DVD
     public void displayEditStudentBanner () {
         io.print("=== Edit DVD ===");
     }
@@ -173,6 +175,7 @@ public class CollectionView {
     public void displayEditSuccessBanner() {
         io.print("DVD successfully edited. Please hit enter to continue");
     }
+
 
 
 
