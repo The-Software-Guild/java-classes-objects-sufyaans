@@ -3,16 +3,10 @@ package com.example.dvdCollection.controller;
 import com.example.dvdCollection.model.Collection;
 import com.example.dvdCollection.model.CollectionDao;
 import com.example.dvdCollection.model.CollectionDaoFile;
-import com.example.dvdCollection.view.CollectionIO;
-import com.example.dvdCollection.view.CollectionIoConsole;
 import com.example.dvdCollection.view.CollectionView;
-
 import java.util.List;
 
 public class CollectionController {
-
-
-    //Controller
     private CollectionView view = new CollectionView();
 
     private CollectionDao dao = new CollectionDaoFile();

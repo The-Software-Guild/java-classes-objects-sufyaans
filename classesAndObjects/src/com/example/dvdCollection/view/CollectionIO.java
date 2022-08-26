@@ -1,7 +1,6 @@
 package com.example.dvdCollection.view;
 
 public interface CollectionIO {
-    //UserIO
     void print(String msg);
 
     String readString(String msgPrompt);

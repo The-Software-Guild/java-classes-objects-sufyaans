@@ -1,13 +1,9 @@
 package com.example.dvdCollection.view;
 
 import com.example.dvdCollection.model.Collection;
-
-import java.util.Date;
 import java.util.List;
 
 public class CollectionView {
-    //ClassRosterView
-
     private CollectionIO io = new CollectionIoConsole();
 
     public int outputMenu() {
@@ -17,7 +13,7 @@ public class CollectionView {
         io.print("3. View a DVD");
         io.print("4. Delete a DVD");
         io.print("5. Edit a DVD");
-        io.print("6. Search for a DVD");
+        //io.print("6. Search for a DVD");
         io.print("7. Exit");
 
         return io.readInt("Please select from the"

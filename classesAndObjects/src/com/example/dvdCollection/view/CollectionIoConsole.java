@@ -3,7 +3,6 @@ package com.example.dvdCollection.view;
 import java.util.Scanner;
 
 public class CollectionIoConsole implements CollectionIO{
-    //USerIOConsoleImpl
     final private Scanner console = new Scanner(System.in);
 
     @Override
